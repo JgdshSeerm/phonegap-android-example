@@ -12,13 +12,54 @@
  $(function(){
 
     $("#submit_deal").submit(function(event, info) {   
-		window.plugins.App47.debug(["DEBUG android cordova sample app deal submitted!"]);             
+		    
+        window.plugins.App47.debug(["DEBUG android cordova sample app deal submitted!"]);             
+
+        window.plugins.App47.getConfigurationGroupNames(function(result){            
+            var data = JSON.parse(result);
+            console.log("first group name from data is " + data[0]);
+          }, 
+          function(error){
+            console.log("got an error " + error);
+          });          
+  
+
         var timedEventID = 0;
         //starting a timed event -- this returns an ID which is then 
         //used to mark the completion of the event
         window.plugins.App47.startTimedEvent(["deal submission"],  
                     function(result){ timedEventID = result; });        
         
+
+        window.plugins.App47.getConfiguration("PG Demo", 
+          function(result){
+            console.log("got a result from getConfiguration" + result);
+            var demoData = JSON.parse(result);
+            console.log("PG Demo amount is " + demoData['amount']);
+          }, 
+          function(error){
+            console.log("got an error " + error);
+          });
+
+        window.plugins.App47.getValue("PG Demo", "amount", 
+          function(result){
+            console.log("PG Demo amount is " + result);
+          }, 
+          function(error){
+            console.log("PG Demo amount errored out " + error);
+          });
+
+
+        window.plugins.App47.getConfiguration("Demo", 
+          function(result){
+            console.log("got a DEMO result! " + result);
+            window.plugins.App47.debug("got a result from DEMO getConfiguration: " + result);
+            var demoData2 = JSON.parse(result);
+            console.log("Demo amount is " + demoData2['test']);
+          }, 
+          function(error){
+            console.log("got an error with Group DEMO " + error);
+          });
         //runtime configuration, in this case in group PG with a key of endpoint_2
         //the value returned is a string (URL). The use case here is that various 
         //values can be updated/changed without redeploying new instances of an App

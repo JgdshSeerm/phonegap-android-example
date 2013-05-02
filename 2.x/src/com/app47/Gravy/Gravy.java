@@ -17,25 +17,23 @@
        under the License.
  */
 
-package com.app47.Gravy;
+package com.app47.gravy;
 
-import android.app.Activity;
+import org.apache.cordova.DroidGap;
+
 import android.os.Bundle;
-import org.apache.cordova.*;
 
 import com.app47.embeddedagent.EmbeddedAgent;
 
-public class Gravy extends DroidGap
-{
-    @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-        EmbeddedAgent.configureAgent(getApplicationContext());
-        super.loadUrl("file:///android_asset/www/index.html");
-        
-    }
-    @Override
+public class Gravy extends DroidGap {
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		EmbeddedAgent.configureAgent(getApplicationContext());
+		super.loadUrl("file:///android_asset/www/index.html");
+	}
+
+	@Override
 	protected void onPause() {
 		super.onPause();
 		EmbeddedAgent.onPause(this);
@@ -47,4 +45,3 @@ public class Gravy extends DroidGap
 		EmbeddedAgent.onResume(this);
 	}
 }
-
