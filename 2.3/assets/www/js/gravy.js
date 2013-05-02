@@ -41,6 +41,14 @@
             console.log("got an error " + error);
           });
 
+        window.plugins.App47.getValue("PG Demo", "amount", 
+          function(result){
+            console.log("PG Demo amount is " + result);
+          }, 
+          function(error){
+            console.log("PG Demo amount errored out " + error);
+          });
+
 
         window.plugins.App47.getConfiguration("Demo", 
           function(result){

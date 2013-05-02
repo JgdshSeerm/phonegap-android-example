@@ -11,8 +11,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import android.util.Log;
-
 import com.app47.embeddedagent.EmbeddedAgent;
 import com.app47.embeddedagent.EmbeddedAgentLogger;
 
@@ -84,7 +82,6 @@ public class App47PGPlugin extends CordovaPlugin {
 	}
 
 	public boolean execute(String methodToInvoke, JSONArray data) {
-		Log.d("App47 Plugin", "action is " + methodToInvoke + " data is " + data);
 		try {
 			if (methodToInvoke.equals(SEND_GENERIC_EVENT)) {
 				return handleGenericEvent(data);
@@ -107,7 +104,6 @@ public class App47PGPlugin extends CordovaPlugin {
 	private Object handleConfigurationKeys(JSONArray data) throws JSONException {
 		JSONObject values = data.getJSONObject(0);
 		String group = values.getString(GROUP);
-		Log.d("App47 Plugin", "configuration as map, group name is " + group);
 		return EmbeddedAgent.allKeysForConfigurationGroup(group);
 	}
 
@@ -131,7 +127,6 @@ public class App47PGPlugin extends CordovaPlugin {
 		JSONObject values = data.getJSONObject(0);
 		String logLevel = values.getString(TYPE);
 		String message = values.getString(MSG);
-		Log.d("App47 Plugin", "Log event of type " + logLevel + " with message " + message);
 		if (logLevel.equals(INFO)) {
 			EmbeddedAgentLogger.info(message);
 		} else if (logLevel.equals(WARN)) {
@@ -148,5 +143,4 @@ public class App47PGPlugin extends CordovaPlugin {
 		EmbeddedAgent.sendEvent(data.getString(0));
 		return true;
 	}
-
 }
