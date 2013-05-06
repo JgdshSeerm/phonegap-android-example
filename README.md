@@ -8,6 +8,12 @@ Clone this repository (or download the tar ball) and then proceed to import the 
 2. Copy the AndroidAgent-x.x.x.jar file into your project's `libs` directory
 3. In your project's `res` directory, copy the `EmbeddedAgentConfig.xml` file into the `xml` diretory (where the PhoneGap `config.xml` file lives)
 4. Inside the `EmbeddedAgentConfig.xml` file, put your target App's ID (as found in the App47 Dashboard) in the element dubbed `EmbeddedAgent_applicationID`
+4. Update your project's `ManifestExample.xml` file and ensure that 3 services are added to the PhoneGap application
+```
+<service android:enabled="true" android:name="com.app47.embeddedagent.AgentConfigService" />
+<service android:enabled="true" android:name="com.app47.embeddedagent.AgentSessionService" />
+<service android:enabled="true" android:name="com.app47.embeddedagent.AgentEventService" />
+```
 5. Edit the PhoneGap `config.xml` file and whitelist the following URL with subdomains set to true: https://app47.com, http://app47.mobi/, and https://app47.mobi/ 
 6. Grab the App47 Android Plugin and configure it as a normal PhoneGap plugin.
 
