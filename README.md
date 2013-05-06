@@ -6,7 +6,7 @@ Clone this repository (or download the tar ball) and then proceed to import the 
 
 1. Download the [App47 Android Agent](http://app47.com/wiki/doku.php?id=configure:androidapp) from the [App47 Dashboard](https://cirrus.app47.com)
 2. Copy the AndroidAgent-x.x.x.jar file into your project's `libs` directory
-3. In your project's `res` directory, copy the `EmbeddedAgentConfig.xml` file into the `xml` diretory (where the PhoneGap `config.xml` file lives)
+3. In your project's `res` directory, copy the `EmbeddedAgentConfig.xml` file into the `xml` directory (where the PhoneGap `config.xml` file lives)
 4. Inside the `EmbeddedAgentConfig.xml` file, put your target App's ID (as found in the App47 Dashboard) in the element dubbed `EmbeddedAgent_applicationID`
 4. Update your project's `ManifestExample.xml` file and ensure that 3 services are added to the PhoneGap application
 ```
@@ -27,24 +27,27 @@ And if you wish to have GPS data associated with App47 events, then ensure:
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 ```
 is enabled. Note, by default, these permissions are enabled in PhoneGap applications.
-5. Edit the PhoneGap `config.xml` file and whitelist the following URL with subdomains set to true: https://app47.com, http://app47.mobi/, and https://app47.mobi/ 
+5. Edit the PhoneGap `config.xml` file and white-list the following URL with subdomains set to true: https://app47.com, http://app47.mobi/, and https://app47.mobi/ 
 6. Grab the [App47 Android Plugin](https://github.com/App47/phonegap-plugins) and configure it as a normal PhoneGap plugin. You will need to copy of the source and place it into your project and then add the following line to the PhoneGap `config.xml` file inside the plugins element:
 ```
 <plugin name="App47" value="com.app47.pgplugin.App47PGPlugin" />
 ```
-7. Next, add the `app47pg.js` file into your `assets` directory. You then must reference this JavaScript file inside your desired App. See the example code in this repository for how to interact with the Plugin.
+7. Next, add the `app47pg.js` file into your `assets` directory. You then must reference this JavaScript file inside your desired App. See the example code in this repository for how to interact with the plugin.
 8. Lastly, you must edit your app's main `Activity` class -- you need to override the `onResume` and `onPause` lifecycle methods:
 ```
 protected void onResume() {
 	super.onResume();
 	EmbeddedAgent.onResume(getApplicationContext());
 }
-
+```
+```
 protected void onPause() {
 	super.onPause();
 	EmbeddedAgent.onPause(getApplicationContext());
 }
 ```
+
+Fire up your app and watch for analytics to appear in your dashboard.
 
 # License
 
