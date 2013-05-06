@@ -46,6 +46,7 @@ protected void onPause() {
 	EmbeddedAgent.onPause(getApplicationContext());
 }
 ```
+These two hook methods provide the means by which the App47 Agent works. 
 
 Fire up your app and watch for analytics to appear in your dashboard.
 
