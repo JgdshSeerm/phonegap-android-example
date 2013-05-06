@@ -6,7 +6,7 @@ Clone this repository (or download the tar ball) and then proceed to import the 
 
 1. Download the [App47 Android Agent](http://app47.com/wiki/doku.php?id=configure:androidapp) from the [App47 Dashboard](https://cirrus.app47.com)
 2. Copy the AndroidAgent-x.x.x.jar file into your project's `libs` directory
-3. In your project's `res` directory, copy the `EmbeddedAgentConfig.xml` file into the `xml` directory (where the PhoneGap `config.xml` file lives)
+3. In your project's `res` directory, copy the `EmbeddedAgentConfig.xml` file into the `values` directory
 4. Inside the `EmbeddedAgentConfig.xml` file, put your target App's ID (as found in the App47 Dashboard) in the element dubbed `EmbeddedAgent_applicationID`
 4. Update your project's `ManifestExample.xml` file and ensure that 3 services are added to the PhoneGap application
 ```
@@ -46,7 +46,11 @@ protected void onPause() {
 	EmbeddedAgent.onPause(getApplicationContext());
 }
 ```
-These two hook methods provide the means by which the App47 Agent works. 
+Then in your `onCreate` method add:
+```
+EmbeddedAgent.configureAgent(getApplicationContext());
+```
+These hook methods provide the means by which the App47 Agent works. If you do not do this step, you will not see analytics.
 
 Fire up your app and watch for analytics to appear in your dashboard.
 
