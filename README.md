@@ -46,10 +46,11 @@ protected void onPause() {
 	EmbeddedAgent.onPause(getApplicationContext());
 }
 ```
-These two hook methods provide the means by which the App47 Agent works. Then in your `onCreate` method add:
+Then in your `onCreate` method add:
 ```
 EmbeddedAgent.configureAgent(getApplicationContext());
 ```
+These hook methods provide the means by which the App47 Agent works. If you do not do this step, you will not see analytics.
 
 Fire up your app and watch for analytics to appear in your dashboard.
 
