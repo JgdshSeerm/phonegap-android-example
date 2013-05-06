@@ -2,6 +2,18 @@
 
 Clone this repository (or download the tar ball) and then proceed to import the sample project (in the 2.x directory, for example) using Eclipse (or your favorite IDE). If you are using Eclipse, when you do import the sample code, make sure you import it as a 'Existing Android Code into Workspace'. 
 
+## Getting started with PhoneGap Android and App47's Android Agent
+
+- Download the [App47 Android Agent](http://app47.com/wiki/doku.php?id=configure:androidapp) from the [App47 Dashboard](https://cirrus.app47.com)
+- Copy the AndroidAgent-x.x.x.jar file into your project's `libs` directory
+- In your project's `res` directory, copy the `EmbeddedAgentConfig.xml` file into the `xml` diretory (where the PhoneGap `config.xml` file lives)
+- Inside the `EmbeddedAgentConfig.xml` file, put your target App's ID (as found in the App47 Dashboard) in the element dubbed `EmbeddedAgent_applicationID`
+- Edit the PhoneGap `config.xml` file and add 
+	<access origin="https://app47.com" subdomains="true"/>
+ 	<access origin="http://app47.mobi/" subdomains="true"/>
+ 	<access origin="https://app47.mobi/" subdomains="true"/>
+- 
+
 # License
 
 The MIT License
