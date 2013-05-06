@@ -9,10 +9,11 @@ Clone this repository (or download the tar ball) and then proceed to import the 
 - In your project's `res` directory, copy the `EmbeddedAgentConfig.xml` file into the `xml` diretory (where the PhoneGap `config.xml` file lives)
 - Inside the `EmbeddedAgentConfig.xml` file, put your target App's ID (as found in the App47 Dashboard) in the element dubbed `EmbeddedAgent_applicationID`
 - Edit the PhoneGap `config.xml` file and add 
-
-	<access origin="https://app47.com" subdomains="true"/>
- 	<access origin="http://app47.mobi/" subdomains="true"/>
- 	<access origin="https://app47.mobi/" subdomains="true"/>
+<pre><code>
+<access origin="https://app47.com" subdomains="true"/>
+<access origin="http://app47.mobi/" subdomains="true"/>
+<access origin="https://app47.mobi/" subdomains="true"/>
+</code></pre>
 - 
 
 # License
