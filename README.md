@@ -26,9 +26,13 @@ And if you wish to have GPS data associated with App47 events, then ensure:
 ```
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 ```
-is enabled
+is enabled. Note, by default, these permissions are enabled in PhoneGap applications.
 5. Edit the PhoneGap `config.xml` file and whitelist the following URL with subdomains set to true: https://app47.com, http://app47.mobi/, and https://app47.mobi/ 
-6. Grab the App47 Android Plugin and configure it as a normal PhoneGap plugin.
+6. Grab the [App47 Android Plugin](https://github.com/App47/phonegap-plugins) and configure it as a normal PhoneGap plugin. You will need to copy of the source and place it into your project and then add the following line to the PhoneGap `config.xml` file inside the plugins element:
+```
+<plugin name="App47" value="com.app47.pgplugin.App47PGPlugin" />
+```
+7.
 
 # License
 
