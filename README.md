@@ -11,7 +11,9 @@ Clone this repository (or download the tar ball) and then proceed to import the 
 4. Update your project's `ManifestExample.xml` file and ensure that 3 services are added to the PhoneGap application
 ```
 <service android:enabled="true" android:name="com.app47.embeddedagent.AgentConfigService" />
+
 <service android:enabled="true" android:name="com.app47.embeddedagent.AgentSessionService" />
+
 <service android:enabled="true" android:name="com.app47.embeddedagent.AgentEventService" />
 ```
 5. Edit the PhoneGap `config.xml` file and whitelist the following URL with subdomains set to true: https://app47.com, http://app47.mobi/, and https://app47.mobi/ 
