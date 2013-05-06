@@ -32,7 +32,7 @@ is enabled. Note, by default, these permissions are enabled in PhoneGap applicat
 ```
 <plugin name="App47" value="com.app47.pgplugin.App47PGPlugin" />
 ```
-7.
+7. Finally, add the `app47pg.js` file into your `assets` directory. You then must reference this JavaScript file inside your desired App. See the example code in this repository for how to interact with the Plugin.
 
 # License
 
