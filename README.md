@@ -4,12 +4,12 @@ Clone this repository (or download the tar ball) and then proceed to import the 
 
 ## Getting started with PhoneGap Android and App47's Android Agent
 
-- Download the [App47 Android Agent](http://app47.com/wiki/doku.php?id=configure:androidapp) from the [App47 Dashboard](https://cirrus.app47.com)
-- Copy the AndroidAgent-x.x.x.jar file into your project's `libs` directory
-- In your project's `res` directory, copy the `EmbeddedAgentConfig.xml` file into the `xml` diretory (where the PhoneGap `config.xml` file lives)
-- Inside the `EmbeddedAgentConfig.xml` file, put your target App's ID (as found in the App47 Dashboard) in the element dubbed `EmbeddedAgent_applicationID`
-- Edit the PhoneGap `config.xml` file and whitelist the following URL with subdomains set to true: https://app47.com, http://app47.mobi/, and https://app47.mobi/ 
-- Grab the App47 Android Plugin and configure it as a normal PhoneGap plugin.
+1. Download the [App47 Android Agent](http://app47.com/wiki/doku.php?id=configure:androidapp) from the [App47 Dashboard](https://cirrus.app47.com)
+2. Copy the AndroidAgent-x.x.x.jar file into your project's `libs` directory
+3. In your project's `res` directory, copy the `EmbeddedAgentConfig.xml` file into the `xml` diretory (where the PhoneGap `config.xml` file lives)
+4. Inside the `EmbeddedAgentConfig.xml` file, put your target App's ID (as found in the App47 Dashboard) in the element dubbed `EmbeddedAgent_applicationID`
+5. Edit the PhoneGap `config.xml` file and whitelist the following URL with subdomains set to true: https://app47.com, http://app47.mobi/, and https://app47.mobi/ 
+6. Grab the App47 Android Plugin and configure it as a normal PhoneGap plugin.
 
 # License
 
